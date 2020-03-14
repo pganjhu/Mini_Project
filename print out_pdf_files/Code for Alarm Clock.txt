@@ -1,0 +1,128 @@
+Public Class Form1
+   
+    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        RadioButton1.Checked = True
+        Timer1.Start()
+    End Sub
+
+    Private Sub Label5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub Label7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub Label6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Timer2.Start()
+        Label2.Text = TextBox1.Text
+        Label7.Text = "Alarm is working"
+        Label7.ForeColor = Color.Green
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Timer2.Stop()
+        Label7.Text = "Alarm has stopped "
+        Label7.ForeColor = Color.Red
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
+
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Label1.Text = TimeOfDay
+        Label2.Text = TextBox1.Text
+    End Sub
+
+    Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
+        If Label2.Text = Label1.Text Then
+            Label8.Text = Label2.Text
+        End If
+        If Label8.Text = Label2.Text And RadioButton1.Checked = True Then
+            Timer2.Stop()
+            Label7.Text = "Alarm has stopped "
+            Label7.ForeColor = Color.Red
+            MessageBox.Show(TextBox2.Text)
+        ElseIf Label8.Text = Label2.Text And RadioButton2.Checked = True Then
+            Console.Beep()
+        End If
+    End Sub
+
+    Private Sub TextBox2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.Click
+        TextBox2.Text = Nothing
+    End Sub
+
+    Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.LostFocus
+        If TextBox2.Text = Nothing Then
+            TextBox2.Text = "Time is up"
+        End If
+    End Sub
+
+    Private Sub TabPage2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage2.Click
+        If ComboBox1.SelectedIndex = 0 Then
+            txtResult.Text = Val(txtNum1.Text) + Val(txtNum2.Text)
+        End If
+        If ComboBox1.SelectedIndex = 1 Then
+            txtResult.Text = Val(txtNum1.Text) - Val(txtNum2.Text)
+        End If
+        If ComboBox1.SelectedIndex = 2 Then
+            txtResult.Text = Val(txtNum1.Text) * Val(txtNum2.Text)
+        End If
+        If ComboBox1.SelectedIndex = 3 Then
+            txtResult.Text = Val(txtNum1.Text) / Val(txtNum2.Text)
+        End If
+
+    End Sub
+
+    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNum1.TextChanged
+
+    End Sub
+
+    Private Sub Label10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub TextBox4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNum2.TextChanged
+
+    End Sub
+
+    Private Sub Label11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub TextBox5_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtResult.TextChanged
+
+    End Sub
+
+    Private Sub Label12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label12.Click
+
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Calculate.Click
+
+    End Sub
+End Class
